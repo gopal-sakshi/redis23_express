@@ -9,3 +9,9 @@ redis-stack-server          // to start redis-stack-server
 
 LEARN SWAGGER
 https://blog.logrocket.com/documenting-express-js-api-swagger/
+
+--------------------------------------------------------------------------------
+
+Redis OM doesn’t support Streams 
+- But Redis Stack does
+- So, we use "node-redis"
