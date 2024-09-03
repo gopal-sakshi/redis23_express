@@ -19,11 +19,28 @@
 /**********************************************************************************/
 
 import { Client } from 'redis-om';
-const url = process.env.REDIS_URL;
+const url_to_connect_to_default_db = "redis://localhost:6379";
+const url_connect_to_db1 = "redis://localhost:6379/1";         
 import { createClient } from 'redis';
-export const connection = createClient({ url });                /* create a connection to Redis with Node Redis */
+export const connection = createClient({ url_connect_to_db1 });     
 await connection.connect();
-const client = await new Client().use(connection);          /* create a Client and bind it to the Node Redis connection */
+const client = await new Client().use(connection);
 export default client;
 
-/**********************************************************************************/
+/**********************************************************************************
+
+
+const client23 = redis.createClient({
+    host: "localhost",
+    port: 6379,
+    password: "1234",
+    user: "username"
+});
+const client24 = redis.createClient("redis://username:1234@localhost:6379");
+
+const client25 = redis.createClient({ url: "redis://username:1234@localhost:6379" });
+const client26 = redis.createClient({ url: "redis://[[username]:[password]]@localhost:6379/[database number]" });
+
+*********************************************************************************/
+
+

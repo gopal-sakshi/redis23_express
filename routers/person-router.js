@@ -3,6 +3,7 @@ import { personRepository } from '../om/person.js';
 export const router = Router();
 
 router.put('/', async (req, res) => {
+    console.log("create & save called ====> ", req.body);
     const person = await personRepository.createAndSave(req.body);
     res.send(person);
 });
